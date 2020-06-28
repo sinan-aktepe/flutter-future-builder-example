@@ -25,10 +25,12 @@ class User {
     name = json['name'];
     username = json['username'];
     email = json['email'];
-    address = json['address'] != null ? new Address.fromJson(json['address']) : null;
+    address =
+        json['address'] != null ? new Address.fromJson(json['address']) : null;
     phone = json['phone'];
     website = json['website'];
-    company = json['company'] != null ? new Company.fromJson(json['company']) : null;
+    company =
+        json['company'] != null ? new Company.fromJson(json['company']) : null;
   }
 }
 
@@ -76,4 +78,5 @@ class Company {
   }
 }
 
-List<User> userFromJson(String s) => List<User>.from(json.decode(s).map((m) => User.fromJson(m)));
+List<User> userFromJson(String jsonString) =>
+    List<User>.from(json.decode(jsonString).map((m) => User.fromJson(m)));
